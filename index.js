@@ -5,9 +5,10 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const { PORT, CLIENT_ORIGIN } = require('./config');
-const { dbConnect } = require('./db-mongoose');
+// const { dbConnect } = require('./db-mongoose');
 // const {dbConnect} = require('./db-knex');
 
+const catsRoute = require('./routes/cats');
 const app = express();
 
 app.use(
@@ -22,6 +23,8 @@ app.use(
   })
 );
 
+app.use('/api', catsRoute);
+
 function runServer(port = PORT) {
   const server = app
     .listen(port, () => {
@@ -34,7 +37,7 @@ function runServer(port = PORT) {
 }
 
 if (require.main === module) {
-  dbConnect();
+  // dbConnect();
   runServer();
 }
 
