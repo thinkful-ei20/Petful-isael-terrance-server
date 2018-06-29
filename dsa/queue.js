@@ -40,7 +40,7 @@ class Queue {
     if(node === this.last){
       this.last = null;
     }
-
+    this.enqueue(node.value);
     return node.value;
   }
 
