@@ -11,6 +11,24 @@ const cats = [
     age: 2,
     breed: 'Bengal',
     story: 'Thrown on the street'
+  },
+  {
+    imageURL:'https://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-cat-photos-funny-cover.jpg', 
+    imageDescription: 'Heavy orange bengal cat',
+    name: 'Lardy',
+    sex: 'male',
+    age: 4,
+    breed: 'Bengal',
+    story: 'Ate too much'
+  },
+  {
+    imageURL:'https://i.imgur.com/yXDNi58.jpg', 
+    imageDescription: 'Bearded cat',
+    name: 'Father Cat',
+    sex: 'male',
+    age: 10,
+    breed: 'dad',
+    story: 'Owners thought he can support himself since hes all grown up'
   }
 ];
 
@@ -19,7 +37,9 @@ router.get('/cats', (req, res) => {
 });
 
 router.delete('/cats', (req,res) => {
-  res.json('deleted');
+  let temp = cats.shift();
+  cats.push(temp);
+  res.json(cats);
 });
 
 module.exports = router;
