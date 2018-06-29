@@ -66,4 +66,3 @@ class Queue {
 
 module.exports = Queue;
 
-//thanks Gianluca for helping me out 

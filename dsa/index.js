@@ -1,6 +1,6 @@
 'use strict';
-const cat = require('./cat');
-const dog = require('./dog');
+const cats = require('./cat');
+const dogs = require('./dog');
 const Queue = require('./queue');
 
 const initQueue = (arr) => {
@@ -11,10 +11,10 @@ const initQueue = (arr) => {
   return queue;
 };
 
-const cats = initQueue(cat);
-const dogs = initQueue(dog);
+const queueCats = initQueue(cats);
+const queueDogs = initQueue(dogs);
 
 module.exports = {
-  cats, 
-  dogs
+  queueCats, 
+  queueDogs
 };
